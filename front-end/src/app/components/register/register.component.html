@@ -1,0 +1,33 @@
+<div class="Register">
+    <h1>Register</h1>
+    <form [formGroup]='form' (submit)='register(form.value)'>
+      <label for="username">Username</label>
+      <input class="form-control" placeholder="Ivan" formControlName='username'>
+      <div class="alert alert-danger" *ngIf='f.username.touched && f.username.errors?.required'>
+        Name is required!
+      </div>
+      <div class="alert alert-danger" *ngIf='f.username.errors?.minlength'>
+        Name must contain 3 or more chars!
+      </div>
+      <label for="email">Email</label>
+      <input class="form-control" placeholder="ivanov@gmail.com" type="email" formControlName='email'>
+      <div class="alert alert-danger" *ngIf='f.email.touched && f.email.errors?.required'>
+        Email is required!
+      </div>
+      <div class="alert alert-danger" *ngIf='f.email.errors?.pattern'>
+        Email must be in format : example@example.com!
+      </div>
+      <label for="password">Password</label>
+      <input class="form-control" placeholder="******" type="password" formControlName='password'>
+      <div class="alert alert-danger" *ngIf='f.password.touched && f.password.errors?.required'>
+        Password is required!
+      </div>
+      <div class="alert alert-danger" *ngIf='f.password.errors?.pattern'>
+        Password must contain 6 digits and chars!
+      </div>
+      <div>
+        <input type="submit" value="REGISTER" [disabled]='form.invalid' />
+      </div>
+      <p class="text-center">Have an account? <a href="/login">Log In</a> </p>
+    </form>
+  </div>
