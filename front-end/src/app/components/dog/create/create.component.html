@@ -1,0 +1,57 @@
+<div class="Create">
+  <h1>Create DogFood</h1>
+  <form [formGroup]='createForm' (submit)='createDog()'>
+    <div>
+      <label htmlFor="name"><span>Name</span></label>
+      <input type="text" id="name" formControlName='name' />
+    </div>
+    <div class="alert alert-danger" *ngIf='f.name.touched && f.name.errors?.required'>
+      Name is required
+    </div>
+    <div>
+      <label htmlFor="imageUrl"><span>Image</span></label>
+      <input type="text" id="imageUrl" formControlName='imageUrl' />
+    </div>
+    <div class="alert alert-danger" *ngIf='f.imageUrl.touched && f.imageUrl.errors?.required'>
+      Image is required
+    </div>
+    <div>
+      <label htmlFor="breed"><span>Breed</span></label>
+      <input type="text" id="breed" formControlName='breed' />
+    </div>
+    <div class="alert alert-danger" *ngIf='f.breed.touched && f.breed.errors?.required'>
+      Breed is required
+    </div>
+    <div>
+      <label htmlFor="dogAge"><span>Age</span></label>
+      <input type="text" id="dogAge" formControlName='dogAge' />
+    </div>
+    <div class="alert alert-danger" *ngIf='f.dogAge.touched && f.dogAge.errors?.required'>
+      Age is required
+    </div>
+    <div>
+      <label htmlFor="description"><span>Description</span></label>
+      <textarea id="description" formControlName='description'></textarea>
+    </div>
+    <div class="alert alert-danger" *ngIf='f.description.touched && f.description.errors?.required'>
+      Description is required
+    </div>
+
+    <div>
+      <label htmlFor="size"><span>Size</span></label>
+      <input type="text" id="size" formControlName='size' />
+    </div>
+    <div class="alert alert-danger" *ngIf='f.size.touched && f.size.errors?.required'>
+      Size is required
+    </div>
+    <div>
+      <label htmlFor="price"><span>Price</span></label>
+      <input id="price" formControlName='price' />
+    </div>
+    <div class="alert alert-danger" *ngIf='f.price.touched && f.price.errors?.required'>
+      Price is required
+    </div>
+   
+    <input type="submit" value="Create" [disabled]='form?.invalid' />
+  </form>
+</div>

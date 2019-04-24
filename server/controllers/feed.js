@@ -1,7 +1,7 @@
 const Dog = require('../models/Dog');
 
 module.exports = {
-  getDog: (req, res) => {
+  getDog: (req, res,next) => {
     Dog.find()
       .then((dog) => {
         res
@@ -16,7 +16,7 @@ module.exports = {
       });
   },
 
-  createDog: (req, res) => {
+  createDog: (req, res, next) => {
     const dogObj = req.body;
     Dog.create(dogObj)
       .then((dog) => {

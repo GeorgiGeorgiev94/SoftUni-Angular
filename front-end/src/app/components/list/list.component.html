@@ -1,0 +1,21 @@
+<section class="Home">
+  <span>Our Dogs</span>
+  <div class="all-products">
+    <ul class="products" *ngIf='dogs$'>
+      <li class="product" *ngFor='let dog of dogs$'>
+        <section>
+          <h5>{{dog.name}}</h5>
+          <img alt="pic" src={{dog.imageUrl}} />
+        </section>
+        <div class="butons">
+          <div>
+            <a class="btn" type='button' [routerLink]="['/dog/details/',dog._id]">Details</a>
+          </div>
+          <div *ngIf="isAdmin">
+            <a class="btn" type='button' [routerLink]="['/dog/edit/',dog._id]">Edit</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>

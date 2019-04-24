@@ -1,3 +1,29 @@
-<p>
-  home works!
-</p>
+<div>
+  <section class='home-first'>
+    <h2>Find your new best friend here!</h2>
+  </section>
+  <section class="Home">
+    <h1>What we offer</h1>
+    <div class="all-products">
+      <ul class="products" *ngIf='dogs$'>
+        <li class="product" *ngFor='let dog of dogs$'>
+          <section>
+            <h5>{{dog.name}}</h5>
+            <img alt="pic" src={{dog.imageUrl}} />
+          </section>
+          <div class="butons">
+            <div>
+              <a class="btn" type='button' [routerLink]="['/dog/details/',dog._id]">Details</a>
+            </div>
+            <div *ngIf='isLoggedIn'>
+              <a class="btn" type='button' [routerLink]="['/dog/purchase/',dog._id]">Buy</a>
+              <div *ngIf="isAdmin">
+                  <a class="btn" type='button' [routerLink]="['/dog/edit/',dog._id]">Edit</a>
+                </div>  
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>

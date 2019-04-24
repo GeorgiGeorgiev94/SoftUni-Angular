@@ -1,0 +1,32 @@
+<div class="Buy" *ngIf="dogs$">
+  <h2>To buy {{dogs$.name}}</h2>
+  <div class='section'>
+    <section class='first-section'>
+      <img alt="pic" src={{dogs$.imageUrl}} />
+    </section>
+    <section class='second-section'>
+      <h1>Breed: {{dogs$.breed}}</h1>
+      <ul>
+        <li><span>Description:</span> {{dogs$.description}}</li>
+        <li><span>Age:</span> {{dogs$.dogAge}}</li>
+        <li><span>Size:</span> {{dogs$.size}} </li>
+        <li><span>Price:</span> {{dogs$.price}} lv</li>
+      </ul>
+    </section>
+  </div>
+  <div>
+    <ul>
+      <form [formGroup]='form' (submit)='purchase()'>
+        <input type="number" formControlName="quantity" id="quantity" step="1" placeholder="Quantity" />
+        <div class="alert alert-danger"
+          *ngIf='form?.controls.quantity?.touched && form?.controls.quantity?.errors?.required'>
+          Quantity is required!
+        </div>
+        <div class="alert alert-danger" *ngIf='form?.controls.quantity?.errors?.min'>
+          Quantity must be equal to or greater than 1!
+        </div>
+        <input class="btn" type="submit" value="Add to Order" [disabled]='form.invalid' />
+      </form>
+    </ul>
+  </div>
+</div>

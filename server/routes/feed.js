@@ -4,7 +4,7 @@ const orderController = require('../controllers/order');
 //const isAuth = require('../middleware/is-auth');
 
 
-router.get('/dog, feedController.getDog');
+router.get('/dog', feedController.getDog);
 router.post('/dog/create',  feedController.createDog);
 router.post('/dog/edit/:id', feedController.editDog);
 router.delete('/dog/delete/:id', feedController.deleteDog);

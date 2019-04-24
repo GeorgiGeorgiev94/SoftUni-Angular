@@ -18,6 +18,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { JwtInterceptorService } from './interceptors/token.interceptor';
 import { ResponseHandlerInterceptorService } from './interceptors/responseHandler.interceptor';
+import { CreateComponent } from './components/dog/create/create.component';
+import { DogModule } from './components/dog/dog.module';
+import { ListComponent } from './components/list/list.component';
 
 
 @NgModule({
@@ -27,7 +30,9 @@ import { ResponseHandlerInterceptorService } from './interceptors/responseHandle
     FooterComponent,
     HomeComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    
+
     
   ],
   imports: [
@@ -39,7 +44,7 @@ import { ResponseHandlerInterceptorService } from './interceptors/responseHandle
     HttpClientModule,
     FlexLayoutModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     AuthService,

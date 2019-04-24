@@ -1,0 +1,29 @@
+<div class="Details" *ngIf="dogs$">
+  <h2>Details of : {{dogs$.name}}</h2>
+    <div class='sections-Det'>
+      <section class='first-section-Det'>
+        <img alt="pic" src={{dogs$.imageUrl}} />
+      </section>
+      <section class='second-section-Det'>
+        <h1>Breed: {{dogs$.breed}}</h1>
+        <ul >
+          <li><span>Description:</span> {{dogs$.description}}</li>
+         <li><span>Age:</span> {{dogs$.dogAge}}</li>
+          <li><span>Size:</span> {{dogs$.size}} </li>
+          
+        </ul>
+      </section>
+    </div>
+    <div>
+      <section class="butons">
+          <div *ngIf='isLoggedIn'>
+              <a class="btn" type='button' [routerLink]="['/dog/purchase/',dogs$._id]">Buy</a>
+              <div *ngIf="isAdmin">
+                  <a class="btn" type='button' [routerLink]="['/dog/edit/',dogs$._id]">Edit</a>
+                  <a class="btn" type='button' (click)='deleteDog(dogs$._id)'>Delete</a>
+                </div>
+            </div>
+            
+      </section>
+    </div>
+  </div>

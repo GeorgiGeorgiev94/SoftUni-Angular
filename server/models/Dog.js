@@ -7,7 +7,7 @@ const dogSchema = new Schema({
   breed: { type: Schema.Types.String, required: true },
   dogAge: { type: Schema.Types.String, required: true },
   description: { type: Schema.Types.String, required: true },
-  size: { type: Schema.Types.Number, required: true },
+  size: { type: Schema.Types.String, required: true },
   price: { type: Schema.Types.Number, required: true }
 });
 

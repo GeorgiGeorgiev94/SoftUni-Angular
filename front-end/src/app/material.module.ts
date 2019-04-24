@@ -4,6 +4,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material';
+import {MatInputModule} from '@angular/material';
 
 
 
@@ -13,7 +14,8 @@ imports:[
     MatIconModule,
     MatGridListModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatInputModule
 ],
 
 exports:[
@@ -21,7 +23,8 @@ exports:[
     MatIconModule,
     MatGridListModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatInputModule
 ]
 })
 export class MaterialModule{}

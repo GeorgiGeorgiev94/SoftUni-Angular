@@ -30,7 +30,7 @@ isAuthenticated() {
 }
 
 isAdmin() {
-  return localStorage.getItem('isAdmin') !== "false";
+  return localStorage.getItem('isAdmin') !=="false" ;
 }
 
 getName(){

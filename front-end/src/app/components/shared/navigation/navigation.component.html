@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <ul fxFlex fxLayout fxLayoutGap="30px">
+  <ul fxFlex fxLayout fxLayoutGap="20px">
       <li>
         <a routerLink="/">Home</a>
       </li>
@@ -12,12 +12,8 @@
       <li *ngIf="authService.isAuthenticated()">
          <a routerLink='/order'>My Orders</a>
       </li>
-   <li *ngIf="authService.isAdmin()">
-     <a routerLink="dogFood/create">Create</a>
-    </li>
-   <li *ngIf="authService.isAdmin()">
-     <a routerLink="dogFood/list">List</a>
-  </li>
+      <a *ngIf="authService.isAdmin() && authService.isAuthenticated()" routerLink="dog/create">Create</a>
+      <a *ngIf="authService.isAdmin() && authService.isAuthenticated()" routerLink="dog/list">List</a>
     </ul>
 <ul *ngIf="!authService.isAuthenticated()" fxFlex fxLayout fxLayoutAlign="flex-end" fxLayoutGap="10px">
   <li>
@@ -27,5 +23,7 @@
     <a routerLink="/register">register</a>
   </li>    
 </ul>
+
+
 <a  *ngIf="authService.isAuthenticated()" routerLink='/' (click)="logout()">Logout</a>
 </mat-toolbar>
