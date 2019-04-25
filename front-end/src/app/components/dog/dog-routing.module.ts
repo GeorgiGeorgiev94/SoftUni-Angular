@@ -6,6 +6,7 @@ import { ListComponent } from '../list/list.component';
 import { DetailsComponent } from './details/details.component';
 import { BuyComponent } from './buy/buy.component';
 import {AuthGuard} from '../../guards/auth.guard';
+import { EditComponent } from './edit/edit.component';
 
 
 const dogRoutes:Route[]=[
@@ -13,6 +14,7 @@ const dogRoutes:Route[]=[
       { path: 'list', component: ListComponent,canActivate: [RoleGuard] },
       { path: 'details/:id', component: DetailsComponent },
       { path: 'purchase/:id', component: BuyComponent,canActivate: [AuthGuard]},
+      { path: 'edit/:id', component: EditComponent,canActivate: [RoleGuard] },
 
 
 ]

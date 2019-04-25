@@ -7,11 +7,12 @@ import { ListComponent } from '../list/list.component';
 import { MaterialModule } from '../../material.module';
 import { DetailsComponent } from './details/details.component';
 import { BuyComponent } from './buy/buy.component';
+import { EditComponent } from './edit/edit.component';
 
  @NgModule({
     declarations: [
       CreateComponent, 
-      ListComponent, DetailsComponent, BuyComponent,
+      ListComponent, DetailsComponent, BuyComponent, EditComponent,
 
     ],
     imports: [

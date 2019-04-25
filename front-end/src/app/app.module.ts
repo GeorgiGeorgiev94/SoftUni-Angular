@@ -21,6 +21,8 @@ import { ResponseHandlerInterceptorService } from './interceptors/responseHandle
 import { CreateComponent } from './components/dog/create/create.component';
 import { DogModule } from './components/dog/dog.module';
 import { ListComponent } from './components/list/list.component';
+import { UserModule } from './components/user/user.module';
+import { AboutComponent } from './components/about/about.component';
 
 
 @NgModule({
@@ -31,6 +33,7 @@ import { ListComponent } from './components/list/list.component';
     HomeComponent,
     RegisterComponent,
     LoginComponent,
+    AboutComponent,
     
 
     
@@ -45,6 +48,7 @@ import { ListComponent } from './components/list/list.component';
     FlexLayoutModule,
     ReactiveFormsModule,
     FormsModule,
+    UserModule,
   ],
   providers: [
     AuthService,

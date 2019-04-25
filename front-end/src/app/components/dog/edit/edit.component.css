@@ -1,0 +1,60 @@
+.Create{
+    margin-bottom: 30px;
+    text-align: center; 
+  }
+  
+h2{
+  margin: 30px;
+}
+
+  .Create form {
+    display: grid;
+    width: 25%;
+    margin: 0 auto;
+    background-color: #7b1fa2;
+  }
+  
+  .Create input, select {
+    width: 90%;
+    height: 35px;
+  padding: 5px;
+  margin: 8px 5px;
+  box-sizing: border-box;
+  }
+
+  textarea {
+    width: 90%;
+    height: 120px;
+    padding: 5px 5px;
+    margin: 8px 5px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+  }
+  
+  .Create input[type="submit"]{  
+    display: inline-block;
+    width: 50%;
+    margin:0 auto;
+    text-align: center;  
+    font-size: 14px;
+    background-color:#7b1fa2;
+    color: white;
+    border-radius: 7px;
+    text-decoration: none;
+    box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.5); 
+    padding: 10px 10px;
+  }
+  
+  .Create input[type="submit"]:hover{
+    color: black;
+    background: transparent;
+  }
+
+  input[type="submit"]:disabled{
+    cursor: not-allowed;
+}
+span{
+    color: white
+}

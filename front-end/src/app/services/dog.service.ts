@@ -8,6 +8,7 @@ const createDog = 'http://localhost:9999/feed/dog/create';
 const getAllDogs ='http://localhost:9999/feed/dog';
 const getSingleDog = 'http://localhost:9999/feed/dog/details/';
 const deleteDog = 'http://localhost:9999/feed/dog/delete/';
+const editDog = 'http://localhost:9999/feed/dog/edit/';
 
 
 @Injectable({
@@ -29,5 +30,8 @@ const deleteDog = 'http://localhost:9999/feed/dog/delete/';
     
   getAllDogs(): Observable<Array<Dog>> {
     return this.http.get<Array<Dog>>(getAllDogs)
+  }
+  editDog(data,id) {
+    return this.http.post(editDog + id, data);
   }
 }

@@ -1,0 +1,67 @@
+<div class="Create " *ngIf="dogs$">
+  <h2>Edit: {{dogs$.name}}</h2>
+  <form [formGroup]='form' (submit)='editDog()'>
+    <div>
+      <label htmlFor="name"><span>Name</span></label>
+      <input type="text" formControlName='name' value="{{dogs$.name}}" />
+    </div>
+    <div class="alert alert-danger" *ngIf='f.name.touched && f.name.errors?.required'>
+      Name is required
+    </div>
+    <div class="alert alert-danger" *ngIf='f.name.errors?.minlength'>
+      Name must have at least 4 letter!
+    </div>
+    <div>
+      <label htmlFor="breed"><span>Breed</span></label>
+      <input type="text" id="breed" formControlName='breed' value="{{dogs$.breed}}" />
+    </div>
+    <div class="alert alert-danger" *ngIf='f.breed.touched && f.breed.errors?.required'>
+      Breed is required
+    </div>
+    <div class="alert alert-danger" *ngIf='f.breed.errors?.minlength'>
+      Breed must have at least 4 letter!
+    </div>
+    <div>
+      <label htmlFor="imageUrl"><span>Picture</span></label>
+      <input type="text" id="imageUrl" formControlName='imageUrl' value="{{dogs$.imageUrl}}" />
+    </div>
+    <div class="alert alert-danger" *ngIf='f.imageUrl.touched && f.imageUrl.errors?.required'>
+      Picture is required
+    </div>
+    <div>
+      <label htmlFor="dogAge"><span>Age</span></label>
+      <input type="text" id="dogAge" formControlName='dogAge' value="{{dogs$.dogAge}}" />
+    </div>
+    <div class="alert alert-danger" *ngIf='f.dogAge.touched && f.dogAge.errors?.required'>
+      Age is required
+    </div>
+    <div>
+      <label htmlFor="description"><span>Description</span></label>
+      <textarea id="description" formControlName='description' value="{{dogs$.description}}"></textarea>
+    </div>
+    <div class="alert alert-danger" *ngIf='f.description.touched && f.description.errors?.required'>
+      Description is required
+    </div>
+    <div class="alert alert-danger" *ngIf='f.description.errors?.minlength'>
+      Description must contain more than 15 symbols!
+    </div>
+    <div>
+      <label htmlFor="size"><span>Size</span></label>
+      <input type="text" id="size" formControlName='size' value="{{dogs$.size}}"/>
+    </div>
+    <div class="alert alert-danger" *ngIf='f.size.touched && f.size.errors?.required'>
+      Size is required
+    </div>
+    <div>
+      <label htmlFor="price"><span>Prize</span></label>
+      <input id="price" formControlName='price' value="{{dogs$.price}}"/>
+    </div>
+    <div class="alert alert-danger" *ngIf='f.price.touched && f.price.errors?.required'>
+      Price is required
+    </div>
+    <div class="alert alert-danger" *ngIf='f.price.errors?.min'>
+      Price must be more than 0.1 lv!
+    </div>
+    <input type="submit" value="Edit"  [disabled]='form.invalid'/>
+  </form>
+</div>

@@ -1,0 +1,24 @@
+.About {
+    text-align: center;
+}
+
+.p-text{
+  background-color:  #7b1fa2;
+  margin: 20px 50px 50px 50px;
+  padding: 20px 20px 20px 20px;
+  text-align: center;
+}
+
+span{
+  font-weight: bold;
+  color: white;
+
+}
+
+.p-text:hover{
+  background-color: #7b1fa2;
+}
+h1{
+    text-align: center;
+
+}

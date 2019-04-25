@@ -2,7 +2,7 @@
     <h1>Register</h1>
     <form [formGroup]='form' (submit)='register(form.value)'>
       <label for="username">Username</label>
-      <input class="form-control" placeholder="Ivan" formControlName='username'>
+      <input class="form-control" placeholder="username" formControlName='username'>
       <div class="alert alert-danger" *ngIf='f.username.touched && f.username.errors?.required'>
         Name is required!
       </div>
@@ -10,7 +10,7 @@
         Name must contain 3 or more chars!
       </div>
       <label for="email">Email</label>
-      <input class="form-control" placeholder="ivanov@gmail.com" type="email" formControlName='email'>
+      <input class="form-control" placeholder="email" type="email" formControlName='email'>
       <div class="alert alert-danger" *ngIf='f.email.touched && f.email.errors?.required'>
         Email is required!
       </div>

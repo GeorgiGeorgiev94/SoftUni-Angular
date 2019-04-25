@@ -34,17 +34,17 @@ module.exports = {
       });
   },
 
-  editDog: (req, res) => {
+  editDog: (req, res,next) => {
     const dogId = req.params.id
     const dogObj = req.body;
     Dog.findById(dogId)
-      .then((dogFood) => {
+      .then((dog) => {
         dog.name = dogObj.name
         dog.imageUrl = dogObj.imageUrl
         dog.breed = dogObj.breed
         dog.dogAge = dogObj.dogAge
         dog.description = dogObj.description
-        dog.size = dogFoodObj.size
+        dog.size = dogObj.size
         dog.price = dogObj.price
 
         dog
@@ -65,7 +65,7 @@ module.exports = {
       });
   },
 
-  detailsDog: (req, res) => {
+  detailsDog: (req, res,next) => {
     const dogId = req.params.id
     Dog.findById(dogId)
       .then((dog) => {
@@ -81,7 +81,7 @@ module.exports = {
       });
   },
 
-  deleteDog: (req, res) => {
+  deleteDog: (req, res,next) => {
     const dogId = req.params.id
     Dog.findById(dogId)
       .then((dog) => {

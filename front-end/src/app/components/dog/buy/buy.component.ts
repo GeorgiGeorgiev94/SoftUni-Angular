@@ -15,7 +15,6 @@ import { OrderService } from '../../../services/order.service';
 export class BuyComponent implements OnInit {
   form
   dogs$:Observable<Dog>
-  quantities;
   
   constructor(
     private fb: FormBuilder,
@@ -28,7 +27,6 @@ export class BuyComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.fb.group({
-      quantity: ['', [Validators.required, Validators.min(1)]],
     })
     let id = this.route.snapshot.params['id'];
     this.dogService.getDog(id).subscribe(data=>{
@@ -39,10 +37,8 @@ export class BuyComponent implements OnInit {
     const data = {
       creator: localStorage.getItem('userId'),
       date: Date.now,
-      product: this.dogs$['title'],
-      quantity: this.form.controls.quantity.value,
+      product: this.dogs$['name'],
       price: this.dogs$['price'],
-      finalPrice: this.dogs$['price'] * this.form.controls.quantity.value,
   }
     this.orderService.createOrder(data).subscribe((data)=>{
       this.router.navigate(['../order'])
